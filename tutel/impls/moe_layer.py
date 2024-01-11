@@ -44,8 +44,6 @@ class MOELayer(torch.nn.Module):
     """
     @staticmethod
     def global_expert_count(num_local_experts, group=None):
-        # added to test the new feature of Tutel
-        print("implemented by smy")
         if not isinstance(num_local_experts, int):
             num_local_experts = -int(1 / (num_local_experts + 1e-5))
         world_size = C.get_world_size(group)
