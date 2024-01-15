@@ -300,6 +300,7 @@ class MOELayer(torch.nn.Module):
 
         self.megablocks_size = megablocks_size
         self.dispatch_count = get_dispatch_count(crit)
+        self.crit = crit
         y = fast_encode(x.to(logits_dtype), crit, self.is_postscore).to(x.dtype)
 
         if adaptive_r is not None:
