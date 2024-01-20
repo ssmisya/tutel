@@ -216,3 +216,4 @@ def fast_decode(data, critial_data, is_postscore=True):
     dispatcher = TutelMoeFastDispatcher(num_global_experts, 0, data.size(-1), data.dtype)
     dispatcher.update(*critial_data[1:-1], is_postscore=is_postscore)
     return dispatcher.decode(data).view(-1, data.size(-1))
+
