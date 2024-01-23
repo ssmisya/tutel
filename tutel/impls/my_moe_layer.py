@@ -40,6 +40,7 @@ class MOELayerCustom(torch.nn.Module):
         batch_prioritized_routing=False,
         normalize_gate=True,
         is_gshard_loss=True,
+        router_type="normal",
         **kwargs
     ):
         super().__init__()
